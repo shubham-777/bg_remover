@@ -1,0 +1,26 @@
+/* Container Styles */
+body {
+    background-color: #f8f9fa;
+}
+.feedback {
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styles */
+.feedback h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.feedback-container {
+    display: flex;
+    align-items: center;
+}
+.feedback-container img {
+    margin-right: 1rem; /* Adjust spacing between icon and text */
+    margin-bottom: 1rem;
+}

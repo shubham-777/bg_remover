@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}BG Remover{% endblock %}
+
+{% block custom_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bg_remover.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loader.css') }}">
+{% endblock %}
+{% block navbar_href %}{{ url_for('bg_remove.index') }}{% endblock %}
+
+
+{% block content %}
+
+    <div id="loader" class="loader" style="display: none;"></div>
+
+    <div class="container">
+        <div class="upload-container">
+<!--            <form action="{{ url_for('bg_remove.process') }}" method="POST" enctype="multipart/form-data">-->
+            <div class="row">
+                <label for="imageInput" class="form-label"><h2>Upload Image</h2></label>
+                <div class="col-10">
+                  <input class="form-control form-control-lg" id="imageInput" type="file" name="image" accept="image/*">
+                </div>
+                <div class="col-2 d-flex align-items-center">
+                    <button id="submitButton" class="btn btn-primary mx-1">Submit</button>
+                    <button id="clearButton" class="btn btn-outline-danger mx-1">Clear</button>
+                </div>
+            </div>
+<!--            </form>-->
+        </div>
+
+        <div class="preview-container">
+            <img id="imagePreview" class="image-preview" />
+        </div>
+    </div>
+
+<script src="{{ url_for('static', filename='js/bg_remover.js') }}"></script>
+{% endblock %}
+
