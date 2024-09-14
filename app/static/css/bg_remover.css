@@ -1,10 +1,12 @@
 /* General Body Styles */
 body {
     background-color: #f8f9fa;
+    position: relative; /* Ensure the loader overlay is positioned correctly */
+
 }
 
 /* Container Styles */
-.upload-container, .preview-container {
+.upload-container, .preview-container, .sample-images-container {
     max-width: 80%;
     margin: 2rem auto;
     padding: 2rem;
@@ -14,7 +16,7 @@ body {
 }
 
 /* Title Styles */
-.upload-container h2 {
+.upload-container h2, .sample-images-container h2{
     margin-bottom: 1rem;
     font-size: 1.5rem;
     font-weight: 600;
@@ -22,13 +24,13 @@ body {
 
 /* Image Preview Styles */
 .image-preview {
-    margin-top: 1rem;
     border: 1px solid #ddd;
     border-radius: 0.5rem;
-    max-width: 100%;
-    max-height: 300px;
     object-fit: cover;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    transition: filter 0.3s ease; /* Smooth transition for the blur effect */
 }
 
 /* Preview Container Hidden by Default */
@@ -36,23 +38,60 @@ body {
     display: none; /* Hide preview container initially */
 }
 
-/* Custom File Upload Button Styles */
-.custom-file-upload {
-    border: 1px solid #ddd;
+/* Download Button Styles */
+#download-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    z-index: 10; /* Ensure it appears above the image */
+    display: none; /* Hide the download button by default */
+}
+
+/* Image Wrapper Styles */
+.image-wrapper {
+    position: relative;
     display: inline-block;
-    padding: 6px 12px;
+    overflow: hidden; /* Ensure the blur effect does not overflow */
+}
+
+/* Hover effect: apply blur to the image and show the button */
+.image-wrapper:hover .image-preview {
+    filter: blur(5px); /* Adjust the blur intensity as needed */
+}
+
+.image-wrapper:hover #download-button {
+    display: block; /* Show the download button on hover */
+}
+
+
+/*for sample images*/
+.sample-images-container {
+    padding: 20px;
+}
+
+.sample-image {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    border-radius: 0.25rem;
-    background-color: #007bff;
-    color: #fff;
-    text-align: center;
 }
 
-.custom-file-upload:hover {
-    background-color: #0056b3;
+.sample-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Hide Default File Input */
-.custom-file-input {
-    display: none;
+@media (max-width: 576px) {
+    .image-preview {
+        width: 100%;
+        height: auto;
+    }
 }

@@ -1,6 +1,7 @@
 /* Container Styles */
 body {
     background-color: #f8f9fa;
+    position: relative;
 }
 .feedback {
     margin: 2rem auto;
