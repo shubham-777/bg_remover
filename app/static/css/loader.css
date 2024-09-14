@@ -1,3 +1,15 @@
+/* Blur Background Overlay */
+.blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4); /* White overlay with slight transparency */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    z-index: 999; /* Make sure it appears below the loader */
+    display: none; /* Hide by default */
+}
 /* Loader styles */
 .loader {
     border: 16px solid #f3f3f3;

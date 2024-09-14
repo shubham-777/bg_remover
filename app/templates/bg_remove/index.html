@@ -9,7 +9,7 @@
 
 
 {% block content %}
-
+    <div class="blur-overlay" id="blur-overlay"></div>
     <div id="loader" class="loader" style="display: none;"></div>
 
     <div class="container">
@@ -29,10 +29,25 @@
         </div>
 
         <div class="preview-container">
-            <img id="imagePreview" class="image-preview" />
+            <div class="image-wrapper">
+                <img id="imagePreview" class="image-preview" />
+                <a id="download-button" href="#" download="image.jpg">Download</a>
+            </div>
+        </div>
+
+         <div class="sample-images-container">
+            <h2>Select Sample Image</h2>
+            <div class="row" id="sampleImages">
+                {% for image in sample_images %}
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center mb-3">
+                        <img src="{{ url_for('static', filename=image) }}" class="image-preview sample-image" />
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 
 <script src="{{ url_for('static', filename='js/bg_remover.js') }}"></script>
+<script src="{{ url_for('static', filename='js/loader.js') }}"></script>
 {% endblock %}
 

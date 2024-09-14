@@ -2,13 +2,16 @@
 {% block title %}Feedback{% endblock %}
 {% block custom_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/feedback.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/loader.css') }}">
 {% endblock %}
 {% block navbar_href %}{{ url_for('bg_remove.index') }}{% endblock %}
 {% block content %}
 <div class="container feedback">
-<!--   <a href="javascript:window.history.back();">Back</a>-->
-<!--   <h2>Feedback</h2>-->
-     <div class="feedback-container">
+    <!-- Loader HTML -->
+    <div class="blur-overlay" id="blur-overlay" style="display: none;"></div>
+    <div id="loader" class="loader" style="display: none;"></div>
+
+    <div class="feedback-container">
         <img src="{{ url_for('static', filename='images/positive-vote-border.png') }}" alt="Feedback Icon" width="35" height="35">
         <h2>Feedback</h2>
      </div>
@@ -54,5 +57,7 @@
       <button type="submit" class="btn btn-success btn-lg" >Send</button>
    </form>
 </div>
-<script src="{{ url_for('static', filename='js/bg_remover.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/feedback.js') }}"></script>
+<script src="{{ url_for('static', filename='js/loader.js') }}"></script>
 {% endblock %}

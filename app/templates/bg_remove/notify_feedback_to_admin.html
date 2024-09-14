@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Feedback</title>
+    <title>New Feedback Received</title>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -21,7 +21,7 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         .header {
-            background-color: #6200ea; /* Material UI color */
+            background-color: #6200ea;
             color: #ffffff;
             padding: 20px;
             text-align: center;
@@ -29,25 +29,14 @@
         .content {
             padding: 20px;
         }
-        .section {
-            margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 4px;
-            background-color: #fafafa;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        .section h3 {
-            margin-top: 0;
+        .content h3 {
             color: #333;
+            margin-top: 0;
         }
-        .section p {
-            margin: 8px 0;
+        .content p {
             color: #555;
             font-size: 16px;
-        }
-        .section .label {
-            font-weight: 500;
-            color: #333;
+            margin: 8px 0;
         }
         .footer {
             background-color: #e0e0e0;
@@ -61,23 +50,20 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>User Feedback</h1>
+            <h1>New Feedback Received</h1>
         </div>
         <div class="content">
-            <div class="section">
-                <h3>Contact Information</h3>
-                <p><span class="label">Name:</span> {{ feedback.name }}</p>
-                <p><span class="label">Email:</span> {{ feedback.email }}</p>
-            </div>
-            <div class="section">
-                <h3>Feedback Details</h3>
-                <p><span class="label">Rating:</span> {{ feedback.rating }}</p>
-                <p><span class="label">Comments:</span> {{ feedback.comments }}</p>
-                <p><span class="label">Received At:</span> {{ feedback.received_at }}</p>
-            </div>
+            <h3>Dear Admin,</h3>
+            <p>You have received a new feedback submission from <strong>{{ feedback.name }}</strong>.</p>
+            <p><strong>Email:</strong> {{ feedback.email }}</p>
+            <p><strong>Rating:</strong> {{ feedback.rating }}</p>
+            <p><strong>Comments:</strong> {{ feedback.comments }}</p>
+            <p><strong>Received At:</strong> {{ feedback.received_at }}</p>
+            <p>Please review the feedback and take necessary actions if needed.</p>
+            <p>Best regards,<br>The BG Remover Team</p>
         </div>
         <div class="footer">
-            <p>We appreciate your feedback and will use it to improve our services.</p>
+            <p>&copy; 2024 BG Remover. All rights reserved.</p>
         </div>
     </div>
 </body>
