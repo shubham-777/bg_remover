@@ -4,7 +4,14 @@ body {
     position: relative; /* Ensure the loader overlay is positioned correctly */
 
 }
-
+.btn-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .btn-container .btn {
+            flex: 1;
+        }
 /* Container Styles */
 .upload-container, .preview-container, .sample-images-container {
     max-width: 80%;
