@@ -1,10 +1,12 @@
+*.pyc
+.git
+.venv
+.pytest_cache
 .venv/
 .idea/
 
-*.pyc
 __pycache__/
 
-instance/
 local/
 
 .pytest_cache/
